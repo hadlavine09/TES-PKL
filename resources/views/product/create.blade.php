@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
+@extends('layouts.admin')
+@section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -42,7 +33,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">type</label>
-                                <input type="number" class="form-control  @error('type') is-invalid @enderror"
+                                <input type="text" class="form-control  @error('type') is-invalid @enderror"
                                     name="type">
                                 @error('type')
                                 <span class="invalid-feedback" role="alert">
@@ -79,6 +70,4 @@
     </div>
     </div>
     </div>
-</body>
-
-</html>
+    @endsection

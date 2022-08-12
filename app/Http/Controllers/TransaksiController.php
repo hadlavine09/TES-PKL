@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaksi;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -22,7 +23,7 @@ class TransaksiController extends Controller
     {
         //menampilkan semua data dari model transaksi
         $transaksi = Transaksi::all();
-        return view('transaksi.index', compact('product'));
+        return view('transaksi.index', compact('transaksi'));
 
     }
 
@@ -35,7 +36,7 @@ class TransaksiController extends Controller
     {
         //
         $transaksi = Transaksi::all();
-        return view('transaksi.create', compact('produt'));
+        return view('transaksi.create', compact('transaksi'));
     }
 
     /**

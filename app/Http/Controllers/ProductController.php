@@ -19,7 +19,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //menampilkan semua data dari model obat
+        //menampilkan semua data dari model product
         $product = Product::all();
         return view('product.index', compact('product'));
 
@@ -34,7 +34,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::all();
-        return view('product.create', compact('produt'));
+        return view('product.create', compact('product'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ProductController extends Controller
             'quantity' => 'required',
         ]);
 
-        $product = new Obat();
+        $product = new Product();
         $product->uuid = $request->uuid;
         $product->name = $request->name;
         $product->type = $request->type;
@@ -75,7 +75,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        return view('product.show', compact('obat'));
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -87,7 +87,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('product.edit', compact('obat'));
+        return view('product.edit', compact('product'));
 
     }
 

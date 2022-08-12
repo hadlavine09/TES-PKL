@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         $user = User::all();
         $total = $user->Count();
-        return view('user.index', compact('user', 'total'));
+        return view('data_user.index', compact('user', 'total'));
     }
 
     public function index2()

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']], function () {
     Route::get('/', [AdminController::class, 'getData']);
     // tambah disini
-    Route::resource('product', ProductController::class);
-    Route::resource('transaksi', TransaksiController::class);
+    Route::resource('/product', ProductController::class);
+    Route::resource('/transaksi', TransaksiController::class);
+    Route::resource('/data_user', UserController::class);
 });

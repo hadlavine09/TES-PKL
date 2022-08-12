@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     protected function adminDashboard()
     {
-        return view('admin.index');
+        return view('layouts.admin');
     }
 
     protected function memberDashboard()

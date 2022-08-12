@@ -100,7 +100,9 @@ class TransaksiController extends Controller
     public function edit($id)
     {
         $transaksi = Transaksi::findOrFail($id);
-        return view('transaksi.edit', compact('transaksi'));
+        $product = Product::all();
+        $user = User::all();
+        return view('transaksi.create', compact('transaksi', 'product', 'user'));
 
     }
 
@@ -114,15 +116,15 @@ class TransaksiController extends Controller
     public function update(Request $request, $id)
     {
         // Validasi
-        $validated = $request->validate([
-            'uuid' => 'required',
-            'id_product' => 'required',
-            'id_user' => 'rquired',
-            'amount' => 'required',
-            'tax' => 'required',
-            'admin_fre' => 'required',
-            'total' => 'required',
-        ]);
+        // $validated = $request->validate([
+        //     'uuid' => 'required',
+        //     'id_product' => 'required',
+        //     'id_user' => 'rquired',
+        //     'amount' => 'required',
+        //     'tax' => 'required',
+        //     'admin_fre' => 'required',
+        //     'total' => 'required',
+        // ]);
 
         $transaksi = Transaksi::findOrFail($id);
         $transaksi->uuid = $request->uuid;

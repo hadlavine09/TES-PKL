@@ -20,7 +20,7 @@
                                     <th>No</th>
                                     <th>Uuid</th>
                                     <th>Nama Product</th>
-                                    <th>User</th>
+                                    <th>Id User</th>
                                     <th>amount</th>
                                     <th>tax</th>
                                     <th>admin fre</th>
@@ -44,6 +44,10 @@
                                         <form action="{{ route('transaksi.destroy', $data->id) }}" method="post">
                                             @csrf
                                             @method('delete')
+                                            <a href="{{ route('transaksi.edit', $data->id) }}"
+                                                class="btn btn-sm btn-outline-success">
+                                                Edit
+                                            </a> |
                                             <a href="{{ route('transaksi.show', $data->id) }}"
                                                 class="btn btn-sm btn-outline-warning">
                                                 Show
